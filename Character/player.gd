@@ -5,21 +5,38 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 
+@onready var label_state: Label = $MainControl/LabelState;
+
+@onready var label_misc: Label = $MainControl/LabelMisc;
+
+@onready var controllers: Node = $Controllers;
+
+@onready var state_machine: StateMachine = $Controllers/StateMachine;
+
+var lagging_speed_len : float = 0;
+
+func _ready() -> void:
+	state_machine.state_changed.connect(_on_state_changed.bind(label_state));
+	state_machine.init(self);
+
+func _unhandled_input(event) -> void:
+	state_machine.process_input(event);
+
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	state_machine.process_physics(delta);
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if (Settings.debugmode):
+		label_misc.text = "";
+		label_misc.text += "
+pos: %8.2f, %8.2f
+vel: %8.2f, %8.2f
+" % [
+			position.x, position.y,
+			velocity.x, velocity.y];
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+func _process(delta: float) -> void:
+	state_machine.process_default(delta);
 
-	move_and_slide()
+func _on_state_changed(state_name: String, label: Label) -> void:
+	if (Settings.debugmode):
+		label.set_text(state_name);

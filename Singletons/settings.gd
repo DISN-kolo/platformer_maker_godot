@@ -1,3 +1,4 @@
 extends Node
 
-var debugmode = false;
+var debugmode : bool = false;
+var gravity : float = -10.0;
