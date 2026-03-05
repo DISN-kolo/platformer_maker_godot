@@ -813,6 +813,7 @@ texture = ExtResource("1_1x3w0")
 
 [resource]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Base Overworld"
 terrain_set_0/terrain_0/color = Color(0.91882735, 0.4434605, 0.7805346, 1)

@@ -10,11 +10,14 @@
 [ext_resource type="Script" uid="uid://c1r22winn0mns" path="res://StateMachine/jump.gd" id="8_5oedh"]
 [ext_resource type="Script" uid="uid://bmlaq088u6jb2" path="res://StateMachine/fall.gd" id="9_sh1m4"]
 [ext_resource type="Script" uid="uid://o454qw6x4p82" path="res://StateMachine/pre_fall.gd" id="10_kivu5"]
+[ext_resource type="Script" uid="uid://dmt3t1biyj72r" path="res://StateMachine/crouched.gd" id="11_rbtku"]
+[ext_resource type="Script" uid="uid://r36stlrng5hi" path="res://StateMachine/uncrouched.gd" id="12_eplru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_761m8"]
 size = Vector2(64, 64)
 
 [node name="PC" type="CharacterBody2D" unique_id=2129211798]
+collision_layer = 0
 script = ExtResource("1_r32be")
 
 [node name="PCCam" type="Camera2D" parent="." unique_id=787769754]
@@ -69,6 +72,20 @@ jump_state = NodePath("../Jump")
 idle_state = NodePath("../Idle")
 walk_state = NodePath("../Walk")
 fall_state = NodePath("../Fall")
+
+[node name="CrouchMachine" type="Node" parent="Controllers" unique_id=677930829 node_paths=PackedStringArray("starting_state")]
+script = ExtResource("5_gh78r")
+starting_state = NodePath("Uncrouched")
+
+[node name="Crouched" type="Node" parent="Controllers/CrouchMachine" unique_id=1102528440 node_paths=PackedStringArray("controllers", "uncrouched_state")]
+script = ExtResource("11_rbtku")
+controllers = NodePath("../..")
+uncrouched_state = NodePath("../Uncrouched")
+
+[node name="Uncrouched" type="Node" parent="Controllers/CrouchMachine" unique_id=1722784588 node_paths=PackedStringArray("controllers", "crouched_state")]
+script = ExtResource("12_eplru")
+controllers = NodePath("../..")
+crouched_state = NodePath("../Crouched")
 
 [node name="PreFallTimer" type="Timer" parent="Controllers" unique_id=709377491]
 unique_name_in_owner = true

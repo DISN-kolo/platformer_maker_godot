@@ -10,7 +10,9 @@ func _ready() -> void:
 	default_level = load(default_level_path).instantiate();
 	pc = pc_ps.instantiate();
 	pc.label_state = %LabelState;
+	pc.label_crouched = %LabelCrouched;
 	pc.label_misc = %LabelMisc;
+	pc.label_jump_held = %LabelJumpHeld;
 	pc.position = default_level.get_spawn_loc();
 	add_child(default_level);
 	add_child(pc);

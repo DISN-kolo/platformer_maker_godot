@@ -8,12 +8,14 @@ extends State
 
 func enter() -> void:
 	actor.velocity.y = -controllers.jump_velocity;
+	controllers.gain_drop_collision();
 	super();
 
 var input_dir: float = 0.0;
 
 func process_physics(delta: float) -> State:
-	input_dir = Input.get_vector("mov_left", "mov_right", "mov_up", "mov_down").x;
+	input_dir = controllers.input_dir_normalizer(
+		Input.get_vector("mov_left", "mov_right", "mov_up", "mov_down").x);
 	controllers.last_direction = input_dir;
 	var temp_fullmultiplier: float = (
 		input_dir

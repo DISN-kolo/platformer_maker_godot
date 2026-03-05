@@ -2,7 +2,6 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- Jump down
 - Make a couple levels actually
 - Level loading
 - Level loading needs to happen due to moving between levels: thus, level exist and entries
