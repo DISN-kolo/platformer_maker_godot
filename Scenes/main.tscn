@@ -1,14 +1,10 @@
 [gd_scene format=3 uid="uid://bpfg4053vmxo5"]
 
-[ext_resource type="PackedScene" uid="uid://b4418cmklroiv" path="res://Scenes/pc.tscn" id="2_bo1nx"]
-[ext_resource type="PackedScene" uid="uid://d054hlguj5vtf" path="res://Scenes/level_0.tscn" id="11_d1ilt"]
+[ext_resource type="Script" uid="uid://8viev1p7gegt" path="res://Scenes/main.gd" id="1_8gbba"]
 
 [node name="Main" type="Node" unique_id=1493251341]
-
-[node name="Level_0" parent="." unique_id=1990827985 instance=ExtResource("11_d1ilt")]
-
-[node name="PC" parent="." unique_id=2129211798 instance=ExtResource("2_bo1nx")]
-position = Vector2(-63, -177)
+script = ExtResource("1_8gbba")
+default_level_path = "uid://d054hlguj5vtf"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1227579412]
 
