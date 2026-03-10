@@ -6,7 +6,6 @@
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_rt7ac")
-exit_id = null
 
 [node name="ExitAreaShape" type="CollisionShape2D" parent="." unique_id=1310476195]
 unique_name_in_owner = true

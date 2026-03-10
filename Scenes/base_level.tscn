@@ -6,7 +6,6 @@
 
 [node name="BaseLevel" type="Node2D" unique_id=1990827985]
 script = ExtResource("1_l7ey7")
-level_id = 5
 
 [node name="TileControl" type="Node2D" parent="." unique_id=1290145722]
 scale = Vector2(4, 4)

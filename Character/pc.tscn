@@ -21,6 +21,7 @@ collision_layer = 2
 script = ExtResource("1_r32be")
 
 [node name="PCCam" type="Camera2D" parent="." unique_id=787769754]
+zoom = Vector2(0.8, 0.8)
 script = ExtResource("2_rbtku")
 
 [node name="PCCollider" type="CollisionShape2D" parent="." unique_id=289027325]
