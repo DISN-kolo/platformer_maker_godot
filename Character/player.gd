@@ -38,6 +38,7 @@ func _physics_process(delta: float) -> void:
 
 	if (Settings.debugmode):
 		label_misc.text = "";
+		label_misc.text += "coll mask: %d\n" % [collision_mask];
 		label_misc.text += "
 pos: %8.2f, %8.2f
 vel: %8.2f, %8.2f

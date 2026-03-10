@@ -11,14 +11,6 @@ func enter() -> void:
 
 var input_dir: float = 0.0;
 
-func process_input(event: InputEvent) -> State:
-	if (Input.is_action_pressed("jump")):
-		if controllers.crouched:
-			controllers.lose_drop_collision();
-	if (Input.is_action_just_released("jump")):
-		controllers.gain_drop_collision();
-	return null;
-
 func process_physics(delta: float) -> State:
 	input_dir = controllers.input_dir_normalizer(
 		Input.get_vector("mov_left", "mov_right", "mov_up", "mov_down").x);
@@ -36,10 +28,17 @@ func process_physics(delta: float) -> State:
 		actor.velocity.y = Settings.terminal_velocity;
 	else:
 		actor.velocity.y += Settings.gravity;
+	if (Input.is_action_pressed("jump")):
+		if controllers.crouched:
+			controllers.lose_drop_collision();
+	elif (Input.is_action_just_released("jump")):
+		controllers.gain_drop_collision();
 	actor.move_and_slide();
 	
+	# is on floor only counts if we're colliding. we obs shan't collide if crouched and jumping.
+	# much to think about.
 	if actor.is_on_floor():
-		if (Input.is_action_pressed("jump") and !controllers.crouched):
+		if (Input.is_action_pressed("jump")):
 			return jump_state;
 		if (abs(input_dir) > 0.1):
 			return walk_state;
