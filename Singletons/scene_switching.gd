@@ -17,7 +17,7 @@ func change_level(path_to: String, spawn_id: int) -> void:
 func _on_goto_from(from_where: int, exit_id: int, to_where: int, spawn_id: int) -> void:
 	print("asked to leave level %d from exit number %d, entering level %d into spawn number %d" %
 		[from_where, exit_id, to_where, spawn_id]);
-	change_level(
+	change_level.call_deferred(
 		"res://Scenes/Levels/level_%d.tscn" % [to_where],
 		spawn_id
 		);
