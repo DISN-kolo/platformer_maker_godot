@@ -9,6 +9,5 @@ script = ExtResource("1_rt7ac")
 
 [node name="ExitAreaShape" type="CollisionShape2D" parent="." unique_id=1310476195]
 unique_name_in_owner = true
-position = Vector2(-3, -14)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

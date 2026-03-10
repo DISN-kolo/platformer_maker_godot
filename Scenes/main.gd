@@ -7,24 +7,30 @@ var loaded_level : Node2D;
 @onready var pc_ps : PackedScene = preload("res://Character/pc.tscn");
 var pc : CharacterBody2D;
 
-func load_level(level_path: String, spawn_number: int, default_spawn: bool) -> void:
+func load_level(level_path: String) -> void:
 	loaded_level = load(level_path).instantiate();
-	if (!default_spawn):
-		pc.position = loaded_level.get_spawn_loc(spawn_number);
-	else:
-		pc.position = loaded_level.get_default_spawn_loc();
 	add_child(loaded_level);
 
 func unload_level() -> void:
 	loaded_level.queue_free();
 
-func _ready() -> void:
-	Signals.connect("load_level", load_level);
-	Signals.connect("unload_level", unload_level);
+func load_player(spawn_number: int) -> void:
 	pc = pc_ps.instantiate();
 	pc.label_state = %LabelState;
 	pc.label_crouched = %LabelCrouched;
 	pc.label_misc = %LabelMisc;
 	pc.label_jump_held = %LabelJumpHeld;
-	load_level(default_level_path, -1, true);
+	pc.position = loaded_level.get_spawn_loc(spawn_number);
 	add_child(pc);
+
+func unload_player() -> void:
+	pc.queue_free();
+
+func _ready() -> void:
+	Signals.connect("load_level", load_level);
+	Signals.connect("unload_level", unload_level);
+	Signals.connect("load_player", load_player);
+	Signals.connect("unload_player", unload_player);
+
+	load_level(default_level_path);
+	load_player(0);
