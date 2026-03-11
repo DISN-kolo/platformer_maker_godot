@@ -2,7 +2,6 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- Items that actually do something
 - Killzones!
 - Saves :)
 - multilayer tileset:
@@ -15,6 +14,8 @@ https://itch.io/jam/2d-pixel-art-game-jam
 
 # Some specs
 - Jump height allows for jumping just over 3 tiles
+- N-times jump based upon whatever you specify. By default grows by 2 when you pick up the boots
+- Levels from base level, connectable by exit nodes and spawn nodes (please do match the ids in the names) (quite intuitive, really)
 
 # misc notes
 - maybe the exit area node thing would work with exporting a collision shape instead of a shape

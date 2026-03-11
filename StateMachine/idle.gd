@@ -7,6 +7,7 @@ extends State
 @export var walk_state: State
 
 func enter() -> void:
+	PlayerMetrics.aux_jumps_left = PlayerMetrics.max_aux_jumps;
 	super();
 
 func process_physics(delta: float) -> State:

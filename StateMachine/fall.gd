@@ -11,6 +11,12 @@ func enter() -> void:
 
 var input_dir: float = 0.0;
 
+func process_input(event: InputEvent) -> State:
+	if (Input.is_action_just_pressed("jump") && PlayerMetrics.aux_jumps_left > 0):
+		PlayerMetrics.aux_jumps_left -= 1;
+		return jump_state;
+	return null;
+
 func process_physics(delta: float) -> State:
 	input_dir = controllers.input_dir_normalizer(
 		Input.get_vector("mov_left", "mov_right", "mov_up", "mov_down").x);
@@ -39,6 +45,7 @@ func process_physics(delta: float) -> State:
 	# much to think about.
 	if actor.is_on_floor():
 		if (Input.is_action_pressed("jump")):
+			PlayerMetrics.aux_jumps_left = PlayerMetrics.max_aux_jumps;
 			return jump_state;
 		if (abs(input_dir) > 0.1):
 			return walk_state;

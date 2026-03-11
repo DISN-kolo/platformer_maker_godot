@@ -7,6 +7,7 @@ extends State
 @export var idle_state: State
 
 func enter() -> void:
+	PlayerMetrics.aux_jumps_left = PlayerMetrics.max_aux_jumps;
 	super();
 
 var input_dir: float = 0.0;
