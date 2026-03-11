@@ -4,18 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://c5q5106kyo8ay" path="res://Scenes/exit_node.tscn" id="2_2iktx"]
 [ext_resource type="Texture2D" uid="uid://cafdftug8dv0m" path="res://Assets/Tiles/Assets/Background_2.png" id="2_ic72l"]
 [ext_resource type="PackedScene" uid="uid://dk4d21iacud52" path="res://PickUp/pick_up_able.tscn" id="4_r74qd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r74qd"]
-resource_local_to_scene = true
-size = Vector2(136, 198)
+[ext_resource type="PackedScene" uid="uid://b0gg0b3vceq0u" path="res://Scenes/killzone.tscn" id="5_um5o3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5o3"]
 resource_local_to_scene = true
-size = Vector2(140, 152)
+size = Vector2(136, 198)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kj5ij"]
 resource_local_to_scene = true
+size = Vector2(140, 152)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ih7c"]
+resource_local_to_scene = true
 size = Vector2(338, 152)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_i4wmn"]
 
 [node name="Level0" unique_id=1990827985 instance=ExtResource("1_y8ppt")]
 
@@ -32,7 +35,7 @@ position = Vector2(-1312, 128)
 spawn_id_to_exit_to = 3
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit0" index="0" unique_id=1310476195]
-shape = SubResource("RectangleShape2D_r74qd")
+shape = SubResource("RectangleShape2D_um5o3")
 
 [node name="Exit1" parent="ExitAreas" parent_id_path=PackedInt32Array(958580726) index="1" unique_id=1718944667 instance=ExtResource("2_2iktx")]
 position = Vector2(800, 608)
@@ -40,7 +43,7 @@ exit_id = 1
 spawn_id_to_exit_to = 1
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit1" index="0" unique_id=1310476195]
-shape = SubResource("RectangleShape2D_um5o3")
+shape = SubResource("RectangleShape2D_kj5ij")
 
 [node name="Exit2" parent="ExitAreas" parent_id_path=PackedInt32Array(958580726) index="2" unique_id=1811572317 instance=ExtResource("2_2iktx")]
 position = Vector2(1088, 1184)
@@ -48,7 +51,7 @@ exit_id = 2
 spawn_id_to_exit_to = 2
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit2" index="0" unique_id=1310476195]
-shape = SubResource("RectangleShape2D_kj5ij")
+shape = SubResource("RectangleShape2D_1ih7c")
 
 [node name="Spawn0" parent="SpawnMarkers" parent_id_path=PackedInt32Array(1679915875) index="0" unique_id=777578760]
 position = Vector2(-967, -1144)
@@ -68,6 +71,13 @@ gizmo_extents = 289.7
 [node name="PickUpAble" parent="." index="4" unique_id=843517446 instance=ExtResource("4_r74qd")]
 position = Vector2(-575, -149)
 
+[node name="Killzone" parent="Killzones" parent_id_path=PackedInt32Array(504526101) index="0" unique_id=1656403260 instance=ExtResource("5_um5o3")]
+position = Vector2(-216, 1625)
+
+[node name="KZcoll" parent="Killzones/Killzone" index="0" unique_id=1465870942]
+shape = SubResource("WorldBoundaryShape2D_i4wmn")
+
 [editable path="ExitAreas/Exit0"]
 [editable path="ExitAreas/Exit1"]
 [editable path="ExitAreas/Exit2"]
+[editable path="Killzones/Killzone"]

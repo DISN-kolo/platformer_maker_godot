@@ -9,3 +9,5 @@ signal load_player;
 signal unload_player;
 
 signal pickupable_picked_up;
+
+signal killzone_entered;

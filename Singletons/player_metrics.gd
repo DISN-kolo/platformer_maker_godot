@@ -3,6 +3,7 @@ extends Node;
 var has_items : Array[Enums.PickupableID];
 var aux_jumps_left: int = 0;
 var max_aux_jumps: int = 0;
+var last_global_pos: Vector2 = Vector2(0, 0);
 
 func _ready() -> void:
 	Signals.pickupable_picked_up.connect(_on_picked_up);

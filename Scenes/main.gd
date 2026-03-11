@@ -21,6 +21,7 @@ func load_player(spawn_number: int) -> void:
 	pc.label_misc = %LabelMisc;
 	pc.label_jump_held = %LabelJumpHeld;
 	pc.position = loaded_level.get_spawn_loc(spawn_number);
+	PlayerMetrics.last_global_pos = pc.position;
 	add_child(pc);
 
 func unload_player() -> void:

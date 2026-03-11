@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0gg0b3vceq0u"]
+
+[ext_resource type="Script" uid="uid://dmalqdil6xt5w" path="res://Scenes/killzone.gd" id="1_jvagm"]
+
+[node name="Killzone" type="Area2D" unique_id=1656403260]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_jvagm")
+
+[node name="KZcoll" type="CollisionShape2D" parent="." unique_id=1465870942]
+debug_color = Color(0.99215686, 0, 0.28235295, 0.80784315)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
