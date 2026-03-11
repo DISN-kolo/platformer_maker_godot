@@ -6,15 +6,15 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ic72l"]
 resource_local_to_scene = true
-size = Vector2(192, 256)
+size = Vector2(136, 198)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r74qd"]
 resource_local_to_scene = true
-size = Vector2(192, 192)
+size = Vector2(140, 152)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5o3"]
 resource_local_to_scene = true
-size = Vector2(384, 192)
+size = Vector2(338, 152)
 
 [node name="Level0" unique_id=1990827985 instance=ExtResource("1_y8ppt")]
 
@@ -28,7 +28,7 @@ tile_map_data = PackedByteArray("AAD9/wQAAAADAAIAAAD9/wMAAAAEAAIAAAD9/wIAAAAEAAE
 
 [node name="Exit0" parent="ExitAreas" parent_id_path=PackedInt32Array(958580726) index="0" unique_id=332839608 instance=ExtResource("2_2iktx")]
 position = Vector2(-1312, 128)
-spawn_id_to_exit_to = 2
+spawn_id_to_exit_to = 3
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit0" index="0" unique_id=1310476195]
 shape = SubResource("RectangleShape2D_ic72l")
@@ -44,7 +44,7 @@ shape = SubResource("RectangleShape2D_r74qd")
 [node name="Exit2" parent="ExitAreas" parent_id_path=PackedInt32Array(958580726) index="2" unique_id=1811572317 instance=ExtResource("2_2iktx")]
 position = Vector2(1088, 1184)
 exit_id = 2
-spawn_id_to_exit_to = 1
+spawn_id_to_exit_to = 2
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit2" index="0" unique_id=1310476195]
 shape = SubResource("RectangleShape2D_um5o3")
@@ -61,7 +61,7 @@ position = Vector2(598, 640)
 gizmo_extents = 289.7
 
 [node name="Spawn3" type="Marker2D" parent="SpawnMarkers" parent_id_path=PackedInt32Array(1679915875) index="3" unique_id=519192149]
-position = Vector2(721, 989)
+position = Vector2(793, 1274)
 gizmo_extents = 289.7
 
 [editable path="ExitAreas/Exit0"]
