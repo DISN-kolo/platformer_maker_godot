@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 Settings="*uid://bqyvb013ya7le"
 Signals="*uid://byw7ybd5k7isl"
 SceneSwitching="*uid://cuunkkctn8168"
+Enums="*uid://d23jnf1yqf40n"
+PlayerMetrics="*uid://dtth4sftg1s3"
 
 [dotnet]
 
@@ -72,6 +74,7 @@ crouch={
 
 2d_physics/layer_1="floors"
 2d_physics/layer_2="player"
+2d_physics/layer_3="pickup"
 
 [physics]
 

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dk4d21iacud52"]
+
+[ext_resource type="Script" uid="uid://de7f10aabqubt" path="res://PickUp/pick_up_able.gd" id="1_k6hn6"]
+[ext_resource type="Script" uid="uid://uwyl4vp0lcm3" path="res://PickUp/pu_area.gd" id="2_k6hn6"]
+[ext_resource type="Texture2D" uid="uid://vxwt16puup8h" path="res://Assets/Sprites/Boots.png" id="2_pw5mt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1d2n"]
+resource_local_to_scene = true
+size = Vector2(64, 64)
+
+[node name="PickUpAble" type="Node2D" unique_id=843517446]
+script = ExtResource("1_k6hn6")
+
+[node name="PUSprite" type="Sprite2D" parent="." unique_id=1096298377]
+scale = Vector2(4, 4)
+texture = ExtResource("2_pw5mt")
+
+[node name="PUArea" type="Area2D" parent="." unique_id=1866673303]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_k6hn6")
+
+[node name="PUShape" type="CollisionShape2D" parent="PUArea" unique_id=1404884811]
+shape = SubResource("RectangleShape2D_b1d2n")
+
+[connection signal="body_entered" from="PUArea" to="PUArea" method="_on_body_entered"]
