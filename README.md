@@ -2,7 +2,6 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- Killzones! need to have last player position on ground saved, then
 - Saves :)
 - multilayer tileset:
 	- background stuff (? maybe do a painting and that's it?)
@@ -11,11 +10,13 @@ https://itch.io/jam/2d-pixel-art-game-jam
 - Various tilesets (because background/foreground matters)
 - Character animations
 - Intro act (big goal!)
+- Frame buffer improvement: only count the last position on non-edge blocks. Use areas to indicate bad places of last-pos saving.
 
 # Some specs
 - Jump height allows for jumping just over 3 tiles
 - N-times jump based upon whatever you specify. By default grows by 2 when you pick up the boots
 - Levels from base level, connectable by exit nodes and spawn nodes (please do match the ids in the names) (quite intuitive, really)
+- Primitive killzone + respawn implementation. Uses a "frame buffer" that is prety wacky but works.
 
 # misc notes
 - maybe the exit area node thing would work with exporting a collision shape instead of a shape
