@@ -2,10 +2,10 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- Killzones!
+- Killzones! need to have last player position on ground saved, then
 - Saves :)
 - multilayer tileset:
-    - background stuff (? maybe do a painting and that's it?)
+	- background stuff (? maybe do a painting and that's it?)
 	- foreground uninteractible decor elements (?)
 - Completed rooms, accessible rooms, inaccessible barriers in rooms...
 - Various tilesets (because background/foreground matters)
