@@ -2,7 +2,7 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
-- Metroidvania mechanics such as picking up an item
+- Items that actually do something
 - Killzones!
 - Saves :)
 - multilayer tileset:
