@@ -78,3 +78,9 @@ func _on_state_changed(state_name: String, label: Label) -> void:
 func _on_killzone_entered() -> void:
 	position = PlayerMetrics.last_global_pos;
 	velocity.y = 0;
+
+func set_cam_limits(limits: Vector4i) -> void:
+	$PCCam.limit_left = limits[0];
+	$PCCam.limit_top = limits[1];
+	$PCCam.limit_right = limits[2];
+	$PCCam.limit_bottom = limits[3];

@@ -5,15 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://c5q5106kyo8ay" path="res://Scenes/exit_node.tscn" id="2_4dpyx"]
 [ext_resource type="PackedScene" uid="uid://b0gg0b3vceq0u" path="res://Scenes/killzone.tscn" id="4_iixi8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyadu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iixi8"]
 resource_local_to_scene = true
 size = Vector2(140, 148)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgxfi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyadu"]
 resource_local_to_scene = true
 size = Vector2(158, 158)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f3p6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgxfi"]
 resource_local_to_scene = true
 size = Vector2(158, 158)
 
@@ -37,7 +37,7 @@ level_id_to_exit_to = 0
 spawn_id_to_exit_to = 2
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit0" index="0" unique_id=1310476195]
-shape = SubResource("RectangleShape2D_cyadu")
+shape = SubResource("RectangleShape2D_iixi8")
 
 [node name="Exit1" parent="ExitAreas" parent_id_path=PackedInt32Array(958580726) index="1" unique_id=1457789894 instance=ExtResource("2_4dpyx")]
 position = Vector2(3552, 928)
@@ -46,7 +46,7 @@ level_id_to_exit_to = 0
 spawn_id_to_exit_to = 1
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit1" index="0" unique_id=1310476195]
-shape = SubResource("RectangleShape2D_xgxfi")
+shape = SubResource("RectangleShape2D_cyadu")
 
 [node name="Exit2" parent="ExitAreas" parent_id_path=PackedInt32Array(958580726) index="2" unique_id=1794509154 instance=ExtResource("2_4dpyx")]
 position = Vector2(-1443, 1188)
@@ -55,7 +55,7 @@ level_id_to_exit_to = 0
 spawn_id_to_exit_to = 3
 
 [node name="ExitAreaShape" parent="ExitAreas/Exit2" index="0" unique_id=1310476195]
-shape = SubResource("RectangleShape2D_5f3p6")
+shape = SubResource("RectangleShape2D_xgxfi")
 
 [node name="Spawn0" parent="SpawnMarkers" parent_id_path=PackedInt32Array(1679915875) index="0" unique_id=777578760]
 position = Vector2(1266, -216)
@@ -77,6 +77,12 @@ position = Vector2(-53, 1856)
 
 [node name="KZcoll" parent="Killzones/Killzone" index="0" unique_id=1465870942]
 shape = SubResource("WorldBoundaryShape2D_jv26f")
+
+[node name="TopLeft" parent="CamBoundaries" parent_id_path=PackedInt32Array(287068449) index="0" unique_id=1773139658]
+position = Vector2(-1790, -1208)
+
+[node name="BottomRight" parent="CamBoundaries" parent_id_path=PackedInt32Array(287068449) index="1" unique_id=582301781]
+position = Vector2(3851, 1598)
 
 [editable path="ExitAreas/Exit0"]
 [editable path="ExitAreas/Exit1"]

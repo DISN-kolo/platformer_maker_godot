@@ -13,6 +13,14 @@ func spawn_disappearing_pu(pickup_id : Enums.PickupableID, gpos : Vector2) -> vo
 	disappearing_dude.global_position = gpos;
 	add_child(disappearing_dude);
 
+func get_cam_limits() -> Vector4i:
+	return Vector4i(
+		$CamBoundaries/TopLeft.position.x,
+		$CamBoundaries/TopLeft.position.y,
+		$CamBoundaries/BottomRight.position.x,
+		$CamBoundaries/BottomRight.position.y
+	);
+
 func _ready() -> void:
 	Signals.pickupable_picked_up.connect(spawn_disappearing_pu);
 	%ExitAreas.set_level_id_to_exits(level_id);

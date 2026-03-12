@@ -2,6 +2,8 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
+- fixing the tileset collisions being all wonky
+- proper backgrounds?..
 - Saves :)
 - multilayer tileset:
 	- background stuff (? maybe do a painting and that's it?)
@@ -17,6 +19,7 @@ https://itch.io/jam/2d-pixel-art-game-jam
 - N-times jump based upon whatever you specify. By default grows by 2 when you pick up the boots
 - Levels from base level, connectable by exit nodes and spawn nodes (please do match the ids in the names) (quite intuitive, really)
 - Primitive killzone + respawn implementation. Uses a "frame buffer" that is prety wacky but works.
+- Camera border setting by two handles from the base level
 
 # misc notes
 - maybe the exit area node thing would work with exporting a collision shape instead of a shape
