@@ -22,6 +22,22 @@ var imperfect_framebased_pos_buffer: Array[Vector2] = [];
 
 var lagging_speed_len : float = 0;
 
+func custom_is_on_floor() -> bool:
+	if ($CustomFloorCollider.has_overlapping_bodies()):
+		if (!$CustomAntiFloorCollider.has_overlapping_bodies()):
+			return true;
+		var lower_list = $CustomAntiFloorCollider.get_overlapping_bodies();
+		var upper_list = $CustomAntiFloorCollider.get_overlapping_bodies();
+		var had_both : bool = false;
+		for overlapper in lower_list:
+			if overlapper.is_in_group("all_walls_floors"):
+				if (upper_list.has(overlapper)):
+					had_both = true;
+		if (had_both):
+			return false;
+		return true;
+	return false;
+
 func _ready() -> void:
 	imperfect_framebased_pos_buffer.resize(FRAMES_IN_CACHE);
 	imperfect_framebased_pos_buffer.fill(position);
@@ -55,6 +71,7 @@ func _physics_process(delta: float) -> void:
 	if (Settings.debugmode):
 		label_misc.text = "";
 		label_misc.text += "on floor?: %s\n" % ["yes" if is_on_floor() else "no"];
+		label_misc.text += "custom fl: %s\n" % ["yes" if custom_is_on_floor() else "no"];
 		label_misc.text += "on wall?:  %s\n" % ["yes" if is_on_wall() else "no"];
 		label_misc.text += "coll mask: %x\n" % [collision_mask];
 		label_misc.text += "aux jumps left: %d\n" % [PlayerMetrics.aux_jumps_left];

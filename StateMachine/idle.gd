@@ -15,10 +15,7 @@ func process_physics(delta: float) -> State:
 		"mov_up", "mov_down").x) >= 0.01):
 		return walk_state;
 	actor.velocity.x = lerp(actor.velocity.x, 0.0, 20*delta);
-	if (actor.velocity.y >= Settings.terminal_velocity):
-		actor.velocity.y = Settings.terminal_velocity;
-	else:
-		actor.velocity.y += Settings.gravity;
+	controllers.fall_vel_processor();
 	actor.move_and_slide();
 	
 	if (Input.is_action_pressed("jump")):

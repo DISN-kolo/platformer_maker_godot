@@ -16,6 +16,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_761m8"]
 size = Vector2(64, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eplru"]
+size = Vector2(63.8, 0.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_slnoy"]
+size = Vector2(63.8, 0.2)
+
 [node name="PC" type="CharacterBody2D" unique_id=2129211798 groups=["player"]]
 collision_layer = 6
 collision_mask = 9
@@ -26,13 +32,13 @@ script = ExtResource("1_r32be")
 zoom = Vector2(0.6, 0.6)
 script = ExtResource("2_rbtku")
 
-[node name="PCCollider" type="CollisionShape2D" parent="." unique_id=289027325]
-shape = SubResource("RectangleShape2D_761m8")
-
 [node name="PCSprite" type="Sprite2D" parent="." unique_id=968438969]
 position = Vector2(1.9073486e-06, 1.9073486e-06)
 scale = Vector2(0.49999997, 0.49999997)
 texture = ExtResource("3_eplru")
+
+[node name="PCCollider" type="CollisionShape2D" parent="." unique_id=289027325]
+shape = SubResource("RectangleShape2D_761m8")
 
 [node name="Controllers" type="Node" parent="." unique_id=668025306]
 script = ExtResource("4_slnoy")
@@ -96,5 +102,23 @@ unique_name_in_owner = true
 process_callback = 0
 wait_time = 0.05
 one_shot = true
+
+[node name="CustomFloorCollider" type="Area2D" parent="." unique_id=2051458881]
+collision_layer = 0
+collision_mask = 9
+
+[node name="CustomFloorCollshape" type="CollisionShape2D" parent="CustomFloorCollider" unique_id=215041162]
+position = Vector2(0, 32.1)
+shape = SubResource("RectangleShape2D_eplru")
+debug_color = Color(0.6330207, 0.5286586, 0.0038652844, 0.41960785)
+
+[node name="CustomAntiFloorCollider" type="Area2D" parent="." unique_id=1933589696]
+collision_layer = 0
+collision_mask = 9
+
+[node name="CustomAntiFloorCollshape" type="CollisionShape2D" parent="CustomAntiFloorCollider" unique_id=200355670]
+position = Vector2(0, 31.7)
+shape = SubResource("RectangleShape2D_slnoy")
+debug_color = Color(0.9999998, 0.0061674262, 0.0799356, 0.41960785)
 
 [connection signal="timeout" from="Controllers/PreFallTimer" to="Controllers/StateMachine/PreFall" method="_on_pre_fall_timer_timeout"]

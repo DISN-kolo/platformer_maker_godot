@@ -682,13 +682,13 @@ script = ExtResource("2_4rblm")
 modulate = Color(1, 1, 1, 0.5058824)
 tile_set = SubResource("TileSet_4rblm")
 
-[node name="OneWayFloors" type="TileMapLayer" parent="TileControl" unique_id=147504095]
+[node name="OneWayFloors" type="TileMapLayer" parent="TileControl" unique_id=147504095 groups=["all_walls_floors"]]
 tile_set = SubResource("TileSet_0f2sa")
 
 [node name="FakeWalls0" type="TileMapLayer" parent="TileControl" unique_id=763005122]
 tile_set = SubResource("TileSet_4rblm")
 
-[node name="FullSolidWalls" type="TileMapLayer" parent="TileControl" unique_id=1883986752]
+[node name="FullSolidWalls" type="TileMapLayer" parent="TileControl" unique_id=1883986752 groups=["all_walls_floors"]]
 modulate = Color(1, 1, 1, 0.8)
 tile_set = SubResource("TileSet_577fb")
 

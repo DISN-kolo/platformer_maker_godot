@@ -21,3 +21,9 @@ func lose_drop_collision() -> void:
 
 func gain_drop_collision() -> void:
 	me.set_collision_mask_value(1, true);
+
+func fall_vel_processor() -> void:
+	if (me.velocity.y >= Settings.terminal_velocity):
+		me.velocity.y = Settings.terminal_velocity;
+	else:
+		me.velocity.y += Settings.gravity;

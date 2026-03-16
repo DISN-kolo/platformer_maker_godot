@@ -26,10 +26,7 @@ func process_physics(delta: float) -> State:
 		actor.velocity.x,
 		temp_fullmultiplier,
 		8*delta);
-	if (actor.velocity.y >= Settings.terminal_velocity):
-		actor.velocity.y = Settings.terminal_velocity;
-	else:
-		actor.velocity.y += Settings.gravity;
+	controllers.fall_vel_processor();
 	actor.move_and_slide();
 	
 	if (!actor.is_on_floor()):

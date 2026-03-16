@@ -30,10 +30,7 @@ func process_physics(delta: float) -> State:
 		actor.velocity.x,
 		temp_fullmultiplier,
 		6*delta);
-	if (actor.velocity.y >= Settings.terminal_velocity):
-		actor.velocity.y = Settings.terminal_velocity;
-	else:
-		actor.velocity.y += Settings.gravity;
+	controllers.fall_vel_processor();
 	if (Input.is_action_pressed("jump")):
 		if controllers.crouched:
 			controllers.lose_drop_collision();
@@ -49,8 +46,19 @@ func process_physics(delta: float) -> State:
 			#print("Collided with: ", collision.get_collider().name);
 			#print("Normal: ", collision.get_normal());
 			#actor.global_position += collision.get_normal()*delta*200;
-	
+		#print("-----");
+	#
 	if (actor.is_on_floor()):
+		if (actor.is_on_wall() && !actor.custom_is_on_floor()):
+			print("detected that i'm on floor, from fall, while also on wall and not on floor.");
+			print("this is THE bug");
+			for i in actor.get_slide_collision_count():
+				var collision = actor.get_slide_collision(i);
+				if (abs(collision.get_normal().x) > 0.1):
+					actor.global_position += collision.get_normal()*delta*100;
+			#TODO manual velocity handling somehow. or some other bs
+			return null;
+		print("detected that i'm on floor, from fall");
 		if (Input.is_action_pressed("jump")):
 			PlayerMetrics.aux_jumps_left = PlayerMetrics.max_aux_jumps;
 			return jump_state;

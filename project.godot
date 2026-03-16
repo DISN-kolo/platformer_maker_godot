@@ -30,6 +30,7 @@ project/assembly_name="2d pixel art game jam 0"
 [global_group]
 
 player=""
+all_walls_floors=""
 
 [input]
 
