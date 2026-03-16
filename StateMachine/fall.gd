@@ -41,9 +41,16 @@ func process_physics(delta: float) -> State:
 		controllers.gain_drop_collision();
 	actor.move_and_slide();
 	
-	# is on floor only counts if we're colliding. we obs shan't collide if crouched and jumping.
-	# much to think about.
-	if actor.is_on_floor():
+	# XXX return wallslide???
+	# it being "on floor" is clearly a bug. FIXME
+	#if (actor.is_on_floor() && actor.is_on_wall()):
+		#for i in actor.get_slide_collision_count():
+			#var collision = actor.get_slide_collision(i);
+			#print("Collided with: ", collision.get_collider().name);
+			#print("Normal: ", collision.get_normal());
+			#actor.global_position += collision.get_normal()*delta*200;
+	
+	if (actor.is_on_floor()):
 		if (Input.is_action_pressed("jump")):
 			PlayerMetrics.aux_jumps_left = PlayerMetrics.max_aux_jumps;
 			return jump_state;

@@ -55,7 +55,8 @@ func _physics_process(delta: float) -> void:
 	if (Settings.debugmode):
 		label_misc.text = "";
 		label_misc.text += "on floor?: %s\n" % ["yes" if is_on_floor() else "no"];
-		label_misc.text += "coll mask: %d\n" % [collision_mask];
+		label_misc.text += "on wall?:  %s\n" % ["yes" if is_on_wall() else "no"];
+		label_misc.text += "coll mask: %x\n" % [collision_mask];
 		label_misc.text += "aux jumps left: %d\n" % [PlayerMetrics.aux_jumps_left];
 		label_misc.text += "max aux jumps : %d\n" % [PlayerMetrics.max_aux_jumps];
 		label_misc.text += "

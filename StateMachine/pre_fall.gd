@@ -48,11 +48,9 @@ func process_physics(delta: float) -> State:
 	actor.move_and_slide();
 	
 	if (Input.is_action_pressed("jump")):
-		if controllers.crouched:
-			controllers.lose_drop_collision();
-		else:
+		if (!controllers.crouched):
 			return jump_state;
-	if (actor.is_on_floor()):
+	if (actor.is_on_floor() && !(actor.is_on_wall())):
 		if abs(input_dir) > 0.1:
 			return walk_state;
 		return idle_state;
