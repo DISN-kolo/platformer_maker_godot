@@ -22,6 +22,13 @@ position = Vector2(1900, -32)
 position = Vector2(-1.5, -64)
 shape = SubResource("RectangleShape2D_2iktx")
 
+[node name="Spawn0" parent="SpawnMarkers" parent_id_path=PackedInt32Array(1679915875) index="0" unique_id=777578760]
+position = Vector2(-32, 32)
+
+[node name="Spawn1" type="Marker2D" parent="SpawnMarkers" parent_id_path=PackedInt32Array(1679915875) index="1" unique_id=1840838134]
+position = Vector2(1779, 32)
+gizmo_extents = 289.7
+
 [node name="TopLeft" parent="CamBoundaries" parent_id_path=PackedInt32Array(287068449) index="0" unique_id=1773139658]
 position = Vector2(-160, -544)
 

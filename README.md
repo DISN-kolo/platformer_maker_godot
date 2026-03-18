@@ -2,6 +2,8 @@
 https://itch.io/jam/2d-pixel-art-game-jam
 
 # TODO
+- fix varied jump height per performance (maybe it's only an issue with x1/n of godot's preview player? or maybe i missed a delta actually.)
+- maybe: try moving only the collbox here and ther upon the infamous corner bug
 - Saves :)
 	- Completed rooms, accessible rooms, inaccessible barriers in rooms...
 - Character animations
@@ -10,7 +12,8 @@ https://itch.io/jam/2d-pixel-art-game-jam
 - Frame buffer improvement: only count the last position on non-edge blocks. Use areas to indicate bad places of last-pos saving.
 
 # Some specs
-- Jump height allows for jumping just over 3 tiles
+- Jump speed allows for jumping horizontally over 9-ish tiles
+- Jump height allows for jumping vertically just over 3 tiles
 - N-times jump based upon whatever you specify. By default grows by 2 when you pick up the boots
 - Levels from base level, connectable by exit nodes and spawn nodes (please do match the ids in the names) (quite intuitive, really)
 - Primitive killzone + respawn implementation. Uses a "frame buffer" that is prety wacky but works.
