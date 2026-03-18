@@ -10,6 +10,7 @@ https://itch.io/jam/2d-pixel-art-game-jam
 - Tile art, background art
 - Intro act (big goal!)
 - Frame buffer improvement: only count the last position on non-edge blocks. Use areas to indicate bad places of last-pos saving.
+- leave the blockout esthetics? idfk
 
 # Some specs
 - Jump speed allows for jumping horizontally over 9-ish tiles
