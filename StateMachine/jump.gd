@@ -9,6 +9,7 @@ extends State
 func enter() -> void:
 	actor.velocity.y = -controllers.jump_velocity;
 	controllers.gain_drop_collision();
+	actor.move_and_slide();
 	super();
 
 var input_dir: float = 0.0;
