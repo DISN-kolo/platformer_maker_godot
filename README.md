@@ -1,5 +1,5 @@
-# 2DPixelArtGameJam0
-https://itch.io/jam/2d-pixel-art-game-jam
+# bad game ideas gj
+https://itch.io/jam/bad-ideas-game-jam-2026
 
 # TODO
 - better blockout textures ?
