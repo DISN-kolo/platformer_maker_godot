@@ -13,6 +13,7 @@ config_version=5
 config/name="Bad ideas GJ 2026"
 run/main_scene="uid://bpfg4053vmxo5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+run/max_fps=60
 config/icon="res://icon.svg"
 
 [autoload]

@@ -27,3 +27,14 @@ func fall_vel_processor() -> void:
 		me.velocity.y = Settings.terminal_velocity;
 	else:
 		me.velocity.y += Settings.gravity;
+
+func hor_vel_processor(input_dir: float, delta: float, accel_factor: float) -> void:
+	var temp_fullmultiplier: float = (
+		input_dir
+		* speed_default
+		* speed_modifier
+		* delta);
+	me.velocity.x = lerp(
+		me.velocity.x,
+		temp_fullmultiplier,
+		accel_factor*delta);

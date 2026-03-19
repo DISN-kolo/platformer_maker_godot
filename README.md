@@ -2,11 +2,11 @@
 https://itch.io/jam/bad-ideas-game-jam-2026
 
 # TODO
-- better blockout textures ?
 - fix varied jump height per performance (maybe it's only an issue with x1/n of godot's preview player? or maybe i missed a delta actually.)
 - Saves :)
 	- Completed rooms, accessible rooms, inaccessible barriers in rooms...
-- Character animations
+- Character animations ?
+- better blockout textures ?
 - Tile art, background art
 - Intro act (big goal!)
 - Frame buffer improvement: only count the last position on non-edge blocks. Use areas to indicate bad places of last-pos saving.

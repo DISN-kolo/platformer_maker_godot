@@ -25,15 +25,7 @@ func process_physics(delta: float) -> State:
 	input_dir = controllers.input_dir_normalizer(
 		Input.get_vector("mov_left", "mov_right", "mov_up", "mov_down").x);
 	controllers.last_direction = input_dir;
-	var temp_fullmultiplier: float = (
-		input_dir
-		* controllers.speed_default
-		* controllers.speed_modifier
-		* delta);
-	actor.velocity.x = lerp(
-		actor.velocity.x,
-		temp_fullmultiplier,
-		16*delta);
+	controllers.hor_vel_processor(input_dir, delta, 16);
 	controllers.fall_vel_processor();
 	actor.move_and_slide();
 	
