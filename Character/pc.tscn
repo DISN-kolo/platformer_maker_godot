@@ -14,13 +14,13 @@
 [ext_resource type="Script" uid="uid://r36stlrng5hi" path="res://StateMachine/uncrouched.gd" id="12_eplru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_761m8"]
-size = Vector2(64, 64)
+size = Vector2(62, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eplru"]
-size = Vector2(63.8, 0.2)
+size = Vector2(61.8, 0.2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_slnoy"]
-size = Vector2(63.8, 0.2)
+size = Vector2(61.8, 0.2)
 
 [node name="PC" type="CharacterBody2D" unique_id=2129211798 groups=["player"]]
 collision_layer = 6
@@ -38,6 +38,7 @@ scale = Vector2(0.49999997, 0.49999997)
 texture = ExtResource("3_eplru")
 
 [node name="PCCollider" type="CollisionShape2D" parent="." unique_id=289027325]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_761m8")
 
 [node name="Controllers" type="Node" parent="." unique_id=668025306]
