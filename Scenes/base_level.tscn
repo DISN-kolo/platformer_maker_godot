@@ -678,14 +678,14 @@ script = ExtResource("1_l7ey7")
 scale = Vector2(4, 4)
 script = ExtResource("2_4rblm")
 
-[node name="FakeWalls1" type="TileMapLayer" parent="TileControl" unique_id=1342714265]
-modulate = Color(1, 1, 1, 0.5058824)
+[node name="FakeWalls0" type="TileMapLayer" parent="TileControl" unique_id=763005122]
 tile_set = SubResource("TileSet_4rblm")
 
 [node name="OneWayFloors" type="TileMapLayer" parent="TileControl" unique_id=147504095 groups=["all_walls_floors"]]
 tile_set = SubResource("TileSet_0f2sa")
 
-[node name="FakeWalls0" type="TileMapLayer" parent="TileControl" unique_id=763005122]
+[node name="FakeWalls1" type="TileMapLayer" parent="TileControl" unique_id=1342714265]
+modulate = Color(1, 1, 1, 0.5058824)
 tile_set = SubResource("TileSet_4rblm")
 
 [node name="PortalDecor" type="TileMapLayer" parent="TileControl" unique_id=784182486]

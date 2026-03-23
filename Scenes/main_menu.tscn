@@ -18,6 +18,7 @@ theme = ExtResource("1_28flt")
 script = ExtResource("2_48xlc")
 
 [node name="DebugVBox" type="VBoxContainer" parent="." unique_id=1611783379]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -32,14 +33,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DebugButton" type="Button" parent="DebugVBox" unique_id=472953714]
-unique_name_in_owner = true
 layout_mode = 2
 text = "debug gaming"
 alignment = 0
 script = ExtResource("3_1ehe0")
 
 [node name="KillSaveButton" type="Button" parent="DebugVBox" unique_id=120018222]
-unique_name_in_owner = true
 layout_mode = 2
 text = "kill the save"
 alignment = 0

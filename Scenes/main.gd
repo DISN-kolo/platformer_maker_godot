@@ -49,6 +49,9 @@ func _ready() -> void:
 	Settings.startlevelpath = default_level_path;
 	if (debug_level_tick):
 		Settings.debugmode = true;
+	else:
+		Settings.debugmode = false;
+	%DebugStuff.visible = Settings.debugmode;
 	spawn_main_menu();
 	Signals.connect("load_level", load_level);
 	Signals.connect("unload_level", unload_level);

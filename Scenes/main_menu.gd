@@ -13,9 +13,9 @@ func _process(delta: float) -> void:
 	else:
 		%ContinueButton.visible = false;
 	if (Settings.debugmode):
-		%DebugButton.visible = true;
+		%DebugVBox.visible = true;
 	else:
-		%DebugButton.visible = false;
+		%DebugVBox.visible = false;
 
 func self_destruction_on_lvl_ldd() -> void:
 	call_deferred("queue_free");
