@@ -74,7 +74,6 @@ alignment = 2
 
 [node name="ContinueButton" type="Button" parent="MMSubCont/VBoxContainer" unique_id=2059540535]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 text = "Continue"
 alignment = 0

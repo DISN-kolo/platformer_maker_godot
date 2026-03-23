@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://di034jxfau7y2"]
+
+[ext_resource type="Theme" uid="uid://bs8m5sb7064ua" path="res://Themes/menu_theme.tres" id="1_e2ola"]
+[ext_resource type="Script" uid="uid://dtq8og1l8lvx" path="res://Scenes/MainMenuStuff/overwrite_save_panel.gd" id="2_al27s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p0k3e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_opfnp"]
+font_size = 48
+font_color = Color(1, 0, 0, 1)
+outline_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opfnp"]
+
+[node name="InvisibleFill" type="Panel" unique_id=1649265727]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_e2ola")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_p0k3e")
+script = ExtResource("2_al27s")
+
+[node name="OverwriteSavePanel" type="Panel" parent="." unique_id=1767277465]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -347.0
+offset_top = -139.0
+offset_right = 347.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OSVBox" type="VBoxContainer" parent="OverwriteSavePanel" unique_id=116597689]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -16.0
+offset_right = 39.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OSLabel" type="Label" parent="OverwriteSavePanel/OSVBox" unique_id=97443529]
+layout_mode = 2
+text = "Overwrite save?
+YOU'LL LOSE ALL PROGRESS"
+label_settings = SubResource("LabelSettings_opfnp")
+horizontal_alignment = 1
+
+[node name="OSHBox" type="HBoxContainer" parent="OverwriteSavePanel/OSVBox" unique_id=350599272]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="YesOverwriteSaveButton" type="Button" parent="OverwriteSavePanel/OSVBox/OSHBox" unique_id=532537592]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "Yes"
+
+[node name="OSVSep" type="VSeparator" parent="OverwriteSavePanel/OSVBox/OSHBox" unique_id=424608643]
+custom_minimum_size = Vector2(181.16, 0)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_opfnp")
+
+[node name="NoOverwriteSaveButton" type="Button" parent="OverwriteSavePanel/OSVBox/OSHBox" unique_id=1942363703]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "No"
+
+[connection signal="pressed" from="OverwriteSavePanel/OSVBox/OSHBox/YesOverwriteSaveButton" to="." method="_on_yes_overwrite_save_button_pressed"]
+[connection signal="pressed" from="OverwriteSavePanel/OSVBox/OSHBox/NoOverwriteSaveButton" to="." method="_on_no_overwrite_save_button_pressed"]
