@@ -2,8 +2,7 @@
 https://itch.io/jam/bad-ideas-game-jam-2026
 
 # TODO
-- Saves :)
-	- Completed rooms, accessible rooms, inaccessible barriers in rooms...
+- inaccessible barriers in rooms... like, the level layouts you have in tldraw n stuff
 - Character animations ?
 - better blockout textures ?
 - Tile art, background art
@@ -21,6 +20,7 @@ https://itch.io/jam/bad-ideas-game-jam-2026
 - Multilayer tilesets to support one-way and normal collisions at once.
 - Fixed a weird bug with an accidental wallslide when you fall through with crouching while against the wall (disabled 'block on wall'). This bug seems to be engine-side.
 - camera inertia and lookahead. but it's commented out for the moment cause it's a bit nauseating
+- (one slot) save load system, primitive main menu
 
 # misc notes
 - maybe the exit area node thing would work with exporting a collision shape instead of a shape
