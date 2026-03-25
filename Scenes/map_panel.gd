@@ -19,6 +19,9 @@ func _ready() -> void:
 # for every level, make the spawnpoit as close to camera boundry as possible,
 # or maybe even on it sometimes. thus, level exit areas should be outside of
 # the visible area...
+# maybe the map data should be stored in a singleton or something. we shan't render
+# it all the time, clearly, so we could store data in a singleton and re-render
+# the map every time we need to see it.
 func generate_panel_for_minimap() -> void:
 	if (main.loaded_level.level_id in PlayerMetrics.generated_panels_for_level_ids):
 		return ;
