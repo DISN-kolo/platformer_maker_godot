@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d054hlguj5vtf" path="res://Scenes/base_level.tscn" id="1_7qxk6"]
 [ext_resource type="PackedScene" uid="uid://c5q5106kyo8ay" path="res://Scenes/exit_node.tscn" id="2_ucdhh"]
-[ext_resource type="PackedScene" uid="uid://cw8qg1lmr2kcm" path="res://Scenes/docker.tscn" id="3_oylv5"]
+[ext_resource type="PackedScene" uid="uid://cw8qg1lmr2kcm" path="res://Scenes/MiniMapStuff/docker.tscn" id="3_oylv5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oylv5"]
 size = Vector2(45, 192)

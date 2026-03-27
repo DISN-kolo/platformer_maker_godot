@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8viev1p7gegt" path="res://Scenes/main.gd" id="1_8gbba"]
 [ext_resource type="Theme" uid="uid://crch0qiqs51px" path="res://Themes/debug_theme.tres" id="2_bo1nx"]
-[ext_resource type="Script" uid="uid://bd5yn2d88a36v" path="res://Scenes/map_panel.gd" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://bppxkaesx72pi" path="res://Scenes/MiniMapStuff/map_panel.tscn" id="3_8gbba"]
 
 [node name="Main" type="Node" unique_id=1493251341]
 script = ExtResource("1_8gbba")
@@ -80,11 +80,5 @@ offset_bottom = 0.39996338
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MapPanel" type="Panel" parent="CanvasLayer/MainControl/MapControl/MapAnchor" unique_id=1416262482]
+[node name="MapPanel" parent="CanvasLayer/MainControl/MapControl/MapAnchor" unique_id=1423073733 instance=ExtResource("3_8gbba")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("3_8gbba")

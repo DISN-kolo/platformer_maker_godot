@@ -9,7 +9,7 @@ class_name MainNode;
 var loaded_level : BaseLevel;
 
 @onready var pc_ps : PackedScene = preload("res://Character/pc.tscn");
-@onready var main_menu_ps : PackedScene = preload("res://Scenes/main_menu.tscn")
+@onready var main_menu_ps : PackedScene = preload("res://Scenes/MainMenuStuff/main_menu.tscn")
 
 var pc : CharacterBody2D;
 

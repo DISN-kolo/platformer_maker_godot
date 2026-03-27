@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d054hlguj5vtf" path="res://Scenes/base_level.tscn" id="1_8rnd2"]
 [ext_resource type="PackedScene" uid="uid://c5q5106kyo8ay" path="res://Scenes/exit_node.tscn" id="2_6grq2"]
 [ext_resource type="PackedScene" uid="uid://b0gg0b3vceq0u" path="res://Scenes/killzone.tscn" id="2_xq0e5"]
-[ext_resource type="PackedScene" uid="uid://cw8qg1lmr2kcm" path="res://Scenes/docker.tscn" id="4_vwhew"]
+[ext_resource type="PackedScene" uid="uid://cw8qg1lmr2kcm" path="res://Scenes/MiniMapStuff/docker.tscn" id="4_vwhew"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6grq2"]
 size = Vector2(189, 611)
