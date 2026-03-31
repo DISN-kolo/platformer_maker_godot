@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://6ukbh8nq1ul8" path="res://Scenes/Levels/level_6.tscn" id="7_ov064"]
 [ext_resource type="PackedScene" uid="uid://bsw0tq4go7hm2" path="res://Scenes/Levels/level_7.tscn" id="8_2afcu"]
 [ext_resource type="PackedScene" uid="uid://wbxc5ydntb5s" path="res://Scenes/Levels/level_8.tscn" id="9_4881g"]
+[ext_resource type="PackedScene" uid="uid://bv0bkfsclefy8" path="res://Scenes/Levels/level_9.tscn" id="10_clq2e"]
 
 [node name="AllConnected" type="Node2D" unique_id=43324381]
 
@@ -38,3 +39,6 @@ position = Vector2(9150, -3700)
 
 [node name="Level8" parent="." unique_id=386878945 instance=ExtResource("9_4881g")]
 position = Vector2(12634, -3967)
+
+[node name="Level9" parent="." unique_id=1113572092 instance=ExtResource("10_clq2e")]
+position = Vector2(9128, -5076)

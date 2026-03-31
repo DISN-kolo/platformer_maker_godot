@@ -5,5 +5,7 @@ func _on_no_overwrite_save_button_pressed() -> void:
 
 func _on_yes_overwrite_save_button_pressed() -> void:
 	SaveManager.delete_save();
+	PlayerMetrics.has_items = [];
+	PlayerMetrics.visited_level_ids = [];
 	Signals.load_level.emit(Settings.startlevelpath);
 	Signals.load_player.emit(0);
