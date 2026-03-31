@@ -11,6 +11,8 @@ var loaded_level : BaseLevel;
 @onready var pc_ps : PackedScene = preload("res://Character/pc.tscn");
 @onready var main_menu_ps : PackedScene = preload("res://Scenes/MainMenuStuff/main_menu.tscn")
 
+var ingame_menu_node : Control;
+
 var pc : CharacterBody2D;
 
 @onready var map_ps : PackedScene = preload("res://Scenes/MiniMapStuff/map_panel.tscn");
@@ -50,9 +52,14 @@ func spawn_main_menu() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if (event.is_action_pressed("minimap")):
+		if (Pickups.PickupableID.LOCATOR in PlayerMetrics.has_items):
+			if (%MapAnchor.get_children().is_empty()):
+				map_node = map_ps.instantiate();
+				%MapAnchor.add_child(map_node);
+	if (event.is_action_pressed("esc")):
 		if (%MapAnchor.get_children().is_empty()):
-			map_node = map_ps.instantiate();
-			%MapAnchor.add_child(map_node);
+			ingame_menu_node = ingame_menu_ps.instantiate();
+			%MainControl.add_child(ingame_menu_node);
 
 func _ready() -> void:
 	Signals.connect("quit_game", quit_game);
