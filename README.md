@@ -14,9 +14,10 @@ https://itch.io/jam/bad-ideas-game-jam-2026
 	- Then, it's just rendered from the resulting coordinates every time a render is asked for. It's centered on the room the player is in!
 	- Of course, the non-visited rooms stay hidden
 - Debug mode for checking some current values of variables, states, and even optionally playing in debug levels.
+- Esc menu! To quit or not to quit? With game pause!
 
 # TODO
-- proper esc menu
+- options menu?
 - Frame buffer improvement: only count the last position on non-edge blocks. Use areas to indicate bad places of last-pos saving.
 - maybe instead not spawn the items at all (see 'queuefreed' in specs below)
 

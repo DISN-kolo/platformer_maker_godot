@@ -9,6 +9,7 @@ func _input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	Signals.unload_level.connect(on_unload);
+	get_tree().paused = true;
 
 func _on_quit_button_pressed() -> void:
 	quit_confirm_node = quit_confirm_ps.instantiate();
@@ -19,3 +20,6 @@ func _on_continue_button_pressed() -> void:
 
 func on_unload() -> void:
 	queue_free();
+
+func _exit_tree() -> void:
+	get_tree().paused = false;
