@@ -35,8 +35,3 @@ https://itch.io/jam/bad-ideas-game-jam-2026
 
 # misc notes
 - maybe the exit area node thing would work with exporting a collision shape instead of a shape
-
-# TODOs that'd be too out of scope for this, but fun to think about
-- Levels need to be positioned somehow. Level graph is required.
-Maybe it's gonna be useful to make it as a scene that's only accissble from the editor, in order to position levels n stuff.
-Furthermore, this sounds like a plan for a tool creation!
