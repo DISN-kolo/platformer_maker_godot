@@ -1,7 +1,6 @@
-# A working system for building platformers, made during 'Bad Ideas Game Jam 2026'
-[Jam link](https://itch.io/jam/bad-ideas-game-jam-2026)
+# A working system for building platformers
 
-# Features
+## Features
 - "Greyboxing" tilemaps with terrains for easy creation of level layouts.
 - Two types of collision surfaces: one-ways for drop-down platforms and the regular "all-round" collisions.
 - Pre-made level template for quick design: place the tiles, the spawn nodes, the (optional) killzones, the exit nodes. Specify the level id and save the level scene with an appropriate name, and the level will be integrated into your level list.
@@ -25,14 +24,15 @@
 - Debug mode for checking some current values of variables, states, and even optionally playing in debug levels.
 - Esc menu: To quit or not to quit?
 
-# TODO
+## TODO
 - force enable minimap via debug
 - options menu?
 - Frame buffer improvement: only count the last position on non-edge blocks. Use areas to indicate bad places of last-pos saving.
 - maybe instead not spawn the items at all (see 'queuefreed' in specs below)
 
-# Misc
+## Misc
 - Jump speed allows for jumping horizontally over 9-ish tiles
 - Jump height allows for jumping vertically just over 3 tiles
 - N-times jump based upon whatever you specify. By default grows by 1 when you pick up the boots.
 - Fixed a weird bug with an accidental wallslide when you fall through with crouching while against the wall (disabled 'block on wall'). This bug seems to be engine-side.
+- Made during [Bad Ideas Game Jam 2026](https://itch.io/jam/bad-ideas-game-jam-2026)
