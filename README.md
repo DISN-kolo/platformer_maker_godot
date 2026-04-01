@@ -1,4 +1,4 @@
-# A working system for building platformers
+# A systems-based Godot 4 project for building platformers
 
 ## Features
 - "Greyboxing" tilemaps with terrains for easy creation of level layouts.
