@@ -33,7 +33,7 @@ func process_physics(delta: float) -> State:
 		Input.get_vector("mov_left", "mov_right", "mov_up", "mov_down").x);
 	controllers.last_direction = input_dir;
 	controllers.hor_vel_processor(input_dir, delta, 6);
-	controllers.fall_vel_processor();
+	controllers.fall_vel_processor(delta);
 	actor.move_and_slide();
 	
 	if (Input.is_action_pressed("jump")):
